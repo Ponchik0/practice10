@@ -1,0 +1,7 @@
+fn rotate(s: String, n: isize) -> String {
+    let len = s.len() as isize;
+    let shift = (n % len + len) % len; // нормалізуємо shift в межах довжини рядка
+    let split_idx = shift as usize;
+
+    format!("{}{}", &s[split_idx..], &s[..split_idx])
+}
